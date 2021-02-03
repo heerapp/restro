@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+{% extends "base.html" %}
+{% block content %}
+
+<table align="center" id="table" class="table table-sm" style="max-width: 600px;max-height: 400px;">
+		<thead class="thead-dark">
+			<tr>
+			<th>Name</th>
+			<th>quantity</th>
+			<th>user</th>
+			<th>address</th>
+			<th>contact</th>
+			</tr>
+		</thead>
+		<tbody>
+        {% for order in order %}
+			<tr class="table-active">
+			<td>{{order.item.name}}</td>
+			<td>{{order.quantity}}</td>
+			<td>{{order.user}}</td>
+			<td>{{order.address}}</td>
+			<td>{{order.contact}}</td>
+			</tr>
+		{% endfor %}
+        </tbody>
+</table>
+{% endblock %}
+
+</body>
+</html>
